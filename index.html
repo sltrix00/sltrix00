@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>sltrix00</title>
+
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header>
+    	<div class="site-name" id="siteName">sltrix--</div>
+    	<div class="clock" id="clock">00:00:00</div>
+    	<a href="https://www.instagram.com/sltrix00/" target="_blank" class="insta-link">
+  			<img src="insta.png" alt="Instagram" class="insta-icon">
+		</a>
+
+	</header>
+
+	<main>
+		<p>SLTRIX00</p>
+	</main>
+
+
+
+	<script>
+    	const siteNameElement = document.getElementById("siteName");
+
+    	// Возможные состояния хвоста
+    	const states = ["--", "-0", "00", "0-", "--"];
+    	let stateIndex = 0;
+
+    	function updateSiteName() {
+     	 const newTail = states[stateIndex];
+     	 siteNameElement.textContent = "sltrix" + newTail;
+
+     	 stateIndex = (stateIndex + 1) % states.length;
+   		 }
+
+    	// Первое обновление сразу
+    	updateSiteName();
+
+    	// Обновление каждую минуту (60 000 мс)
+    	setInterval(updateSiteName, 30000);
+
+    	//clocks
+    	const clockElement = document.getElementById("clock");
+
+      	function updateClock() {
+      	  const now = new Date();
+      	  const hours = String(now.getHours()).padStart(2, '0');
+      	  const minutes = String(now.getMinutes()).padStart(2, '0');
+      	  const seconds = String(now.getSeconds()).padStart(2, '0');
+      	  clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+      }
+
+      updateClock();
+      setInterval(updateClock, 1000);
+  </script>
+
+</body>
+</html>

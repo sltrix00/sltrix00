@@ -1,0 +1,69 @@
+* {
+	font-family: "Literata", serif;
+ 	font-optical-sizing: auto;
+  	font-weight: 700;
+  	font-style: normal;
+}
+
+body {
+	width:	100%;
+	margin: 0;
+  	padding: 0;
+  	overflow-x: hidden;
+	height: 5000px;
+
+	background-image: url(LA.jpg);
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.site-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    left: 20px;
+}
+
+.clock {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.3rem;
+      font-family: monospace;
+}
+
+.insta-link {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.insta-icon {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1); /* белая иконка */
+  transition: transform 0.2s ease;
+}
+
+.insta-icon:hover {
+  transform:  scale(1.1);
+}
+
+
+main {
+    padding-top: 80px;
+}
