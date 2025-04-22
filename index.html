@@ -23,13 +23,62 @@
 
 	<main>
 		<section id="music" style="margin: 40px auto; max-width: 800px; padding: 0 20px;">
-  			<h2 style="color: #fff; text-align: center; margin-bottom: 20px;">Моя музыка</h2>
-  			<iframe style="border-radius:12px" 
-          		src="https://open.spotify.com/embed/playlist/6XIDaBSZ92cKcZEHdfzgY6?utm_source=generator&theme=0" 
-        	 	width="100%" height="352" frameBorder="0" allowfullscreen="" 
-          		allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-          		loading="lazy"></iframe>
+  			<h2 style="color: #fff; text-align: center; margin-bottom: 20px;">My music</h2>
+
+		  <div style="text-align: center; margin-bottom: 20px;">
+		    <select id="playlistSelector" style="
+		      padding: 10px 15px;
+		      font-size: 1rem;
+		      border-radius: 8px;
+		      background-color: #222;
+		      color: #fff;
+		      border: none;
+		      appearance: none;
+		      background-image: url('data:image/svg+xml;utf8,<svg fill=\'white\' height=\'20\' viewBox=\'0 0 24 24\' width=\'20\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M7 10l5 5 5-5z\'/></svg>');
+		      background-repeat: no-repeat;
+		      background-position: right 10px center;
+		      background-size: 16px;
+		      padding-right: 40px;
+		    ">
+		      <option value="2025">2025</option>
+		      <option value="2024">2024</option>
+		      <option value="2023">2023</option>
+		      <option value="2022">2022</option>
+		    </select>
+		  </div>
+
+		  <div id="playlists" style="box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); border-radius: 12px; overflow: hidden;">
+		    <div data-year="2025" class="playlist-frame">
+		      <iframe style="border-radius:12px; width: 100%; height: 352px;" 
+		              src="https://open.spotify.com/embed/playlist/6XIDaBSZ92cKcZEHdfzgY6?utm_source=generator&theme=0" 
+		              frameBorder="0" allowfullscreen=""
+		              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+		              loading="lazy"></iframe>
+		    </div>
+		    <div data-year="2024" class="playlist-frame" style="display:none;">
+		      <iframe style="border-radius:12px; width: 100%; height: 352px;" 
+		              src="https://open.spotify.com/embed/playlist/0q3w8j1zleUsj7i3XfKd4W?utm_source=generator&theme=0" 
+		              frameBorder="0" allowfullscreen=""
+		              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+		              loading="lazy"></iframe>
+		    </div>
+		    <div data-year="2023" class="playlist-frame" style="display:none;">
+		      <iframe style="border-radius:12px; width: 100%; height: 352px;" 
+		              src="https://open.spotify.com/embed/playlist/0iU7O2h2UJcGWmUSSyrADo?utm_source=generator&theme=0" 
+		              frameBorder="0" allowfullscreen=""
+		              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+		              loading="lazy"></iframe>
+		    </div>
+		    <div data-year="2022" class="playlist-frame" style="display:none;">
+		      <iframe style="border-radius:12px; width: 100%; height: 352px;" 
+		              src="https://open.spotify.com/embed/playlist/2sP4m1WF8qmdBEPCYzWicW?utm_source=generator&theme=0" 
+		              frameBorder="0" allowfullscreen=""
+		              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+		              loading="lazy"></iframe>
+		    </div>
+		  </div>
 		</section>
+
 
 	</main>
 
@@ -68,6 +117,23 @@
 
       updateClock();
       setInterval(updateClock, 1000);
+
+	      document.addEventListener("DOMContentLoaded", function () {
+	    const selector = document.getElementById("playlistSelector");
+	    const frames = document.querySelectorAll(".playlist-frame");
+
+	    selector.addEventListener("change", function () {
+	      const selectedYear = selector.value;
+
+	      frames.forEach(frame => {
+	        if (frame.getAttribute("data-year") === selectedYear) {
+	          frame.style.display = "block";
+	        } else {
+	          frame.style.display = "none";
+	        }
+	      });
+	    });
+	  });
   </script>
 
 </body>
