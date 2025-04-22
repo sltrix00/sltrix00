@@ -66,7 +66,13 @@ header {
 
 main {
   padding-top: 80px;
-  background-color: #121212; /* Spotify vibe */
   min-height: 100vh;
   color: white;
+}
+
+#playlists {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  overflow: hidden;
+  background: transparent; /* убираем фон */
 }
