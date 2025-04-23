@@ -15,19 +15,52 @@
 	<header>
     	<div class="site-name" id="siteName">sltrix--</div>
     	<div class="clock" id="clock">00:00:00</div>
-    	<div style="display: flex; gap: 12px; align-items: center;">
-		    <a href="https://www.imdb.com/user/ur161986045/?ref_=nv_usr_prof_2" target="_blank">
-		      <img src="imdb.png" alt="IMDb" style="height: 28px;" class="imdb-icon">
-		    </a>
-		    <a href="https://www.instagram.com/yourusername/" target="_blank" class="">
-		      <img src="insta.png" alt="Instagram" style="height: 28px;" class="insta-icon">
-		    </a>
-  		</div>
+    	<div class="header-icons">
+		  <a href="https://open.spotify.com/user/31vh5rlxstdyyglhqrr2epfwc46i?si=f91435e9864847f7" target="_blank"><img src="spotify.png" alt="Spotify"></a>
+		  <a href="https://www.tiktok.com/@mamanekity?is_from_webapp=1&sender_device=pc" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
+		  <a href="https://www.imdb.com/user/ur161986045/?ref_=nv_usr_prof_2" target="_blank">
+		    <img src="imdb.png" alt="IMDb">
+		  </a>
+		  <a href="https://www.instagram.com/sltrix00/" target="_blank">
+		    <img src="insta.png" alt="Instagram">
+		  </a>
+		</div>
+
+
 
 
 	</header>
 
 	<main>
+
+		<section id="hello" style="
+		  max-width: 800px;
+		  margin: 40px auto 20px auto;
+		  padding: 0 20px;
+		  font-family: sans-serif;
+		  font-size: 1rem;
+		  line-height: 1.6;
+		  color: #eee;
+		  background-color: #111;
+    		padding: 24px;
+    		border-radius: 12px;
+    		box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+		">
+		  <p>
+		    На этом сайте можно узнать, какие песни я в последнее время слушаю, какие фильмы посмотрел. Постараюсь также часто загружать фото и видео, которые я смонтировал или просто понравились. Возможно, добавлю раздел о своих мыслях. В шапке или сверху сайта можете увидеть мой ник, время и логотипы платформ, которые ведут на нужные страницы.
+		  </p>
+
+		  <p>
+		    В разделе <strong>My Music</strong> вы можете заметить плейлисты с годами. Ещё в 2022 году я придумал создавать один плейлист с песнями, которые мне понравились и которые я активно слушал в определённый период. Конечно, я не ограничиваюсь только одним плейлистом — я сделал это для удобства, потому что вкладка «Любимые треки» содержит в себе все песни за всё время, и любимую можно легко потерять среди жанровых или по настроению разбитых плейлистов. Вы можете выбрать любой год с 2022 по 2025 — просто нажмите нужный в выпадающем списке. Тут на сайте, превью плейлиста, он показывает максимум 100 треков. Если нажмете и перейдете на плейлист увидете полный плейлист. Извините, я люблю Spotify.
+		  </p>
+
+		  <p>
+		    <strong>IMDb</strong> — платформа про фильмы. При переходе по ссылке откроется мой профиль. Там можно увидеть, что я посмотрел или хочу посмотреть.
+		  </p>
+		</section>
+
+
+
 		<section id="music" style="margin: 40px auto; max-width: 800px; padding: 0 20px;">
   			<h2 style="color: #fff; text-align: center; margin-bottom: 20px;"><a href="https://open.spotify.com/user/31vh5rlxstdyyglhqrr2epfwc46i?si=a0458e76d5f9409c" style="text-decoration: none; color: inherit;" target="_blank">My Music</a></h2>
 
@@ -87,7 +120,8 @@
 
 	</main>
 
-				<div id="introModal" class="fade-in" style="
+
+		<div id="introModal" class="fade-in" style="
 		  position: fixed;
 		  inset: 0;
 		  background: rgba(18, 18, 18, 0.95);
@@ -117,16 +151,18 @@
 			">
 
 		  <p style="font-size: 1.2rem; margin-bottom: 20px;">
-		    Hello. This is sltrix's website.<br>
+		    Hello. This is sltrix's website.<br><br>
+		    You can come here as much as you want and no one will know about it. You don't have to worry about anyone knowing that you're watching me.<br><br>
 		    Always remember me.<br>
-		    <strong>Promise.</strong>
+		    <strong>Promise.</strong><br><br>
+		    -sltrix00<br>
 		  </p>
 
 		  <!-- Фото — теперь всегда по центру -->
-		  <img src="mypic.png" alt="sltrix photo" style="
+		  <img src="mypic.png" class="mypic" alt="sltrix photo" style="
 		    width: 140px;
 		    height: 140px;
-		    border-radius: 50%;
+		    border-radius: 10%;
 		    object-fit: cover;
 		    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 		    margin: 0 auto 25px auto;
@@ -147,7 +183,6 @@
 		    margin: 0 auto;
 		  ">I promise</button>
 		</div>
-
 	</div>
 
 

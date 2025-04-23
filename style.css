@@ -54,26 +54,45 @@ header {
   transform: translateY(-50%);
 }
 
-.insta-icon {
-  width: 28px;
+.header-icons a img {
   height: 28px;
-  filter: brightness(0) invert(1); /* белая иконка */
   transition: transform 0.2s ease;
 }
 
-.insta-icon:hover {
-  transform:  scale(1.1);
+.header-icons a:hover img {
+  transform: scale(1.1);
 }
 
-.imdb-icon {
-  width: 28px;
-  height: 28px;
-  filter: brightness(0) invert(1); /* белая иконка */
-  transition: transform 0.2s ease;
+/* Увеличенные отступы между логотипами */
+.header-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-right: 20px;
 }
 
-.imdb-icon:hover {
-  transform:  scale(1.1);
+/* Адаптив: скрыть часы и увеличить логотипы на телефонах */
+@media (max-width: 600px) {
+  #clock {
+    display: none;
+  }
+
+  .header-icons a img {
+    height: 36px;
+  }
+
+  .header-icons {
+    gap: 28px;
+  }
+}
+
+
+.mypic {
+    transition: transform 0.3s ease;
+}
+
+.mypic:hover {
+    transform: scale(1.1);
 }
 
 main {
@@ -95,7 +114,7 @@ main {
   }
 
   .fade-out {
-    animation: fadeOut 0.8s forwards;
+    animation: fadeOut 1s forwards;
   }
 
   @keyframes fadeIn {
