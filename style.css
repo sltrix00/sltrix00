@@ -19,15 +19,17 @@ body {
 
 header {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    color: white;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    z-index: 1000;
-    box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #111;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
 .site-name {
@@ -63,6 +65,16 @@ header {
   transform:  scale(1.1);
 }
 
+.imdb-icon {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1); /* белая иконка */
+  transition: transform 0.2s ease;
+}
+
+.imdb-icon:hover {
+  transform:  scale(1.1);
+}
 
 main {
   padding-top: 80px;
