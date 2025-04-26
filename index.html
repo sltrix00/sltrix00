@@ -155,19 +155,60 @@
   			</div>
   		</section>
 
-  		<section class="media" id="media" style="margin: 40px auto; max-width: 800px; padding: 0 20px;">
-  			<h2 style="color: #fff; text-align: center; margin-bottom: 20px;">Media</h2>
+  		<section id="media" class="media">
 
-  			<div class="media-gallery">
-			  <!-- Видео -->
-			  <video src="pls.mp4" controls class="media-item"></video>
+		  <h2>Смонтированные материалы</h2>
 
-			  <!-- Фото -->
-			  <img src="sltrix00.jpg" alt="sltrix00" class="media-item">
-			</div>
+		  <div class="media-preview">
+		    <div class="preview-section" onclick="openGallery('edited-videos')">
+		      <div class="preview-scroll">
+		        <video src="pls.mp4" muted></video>
+		        <video src="pls2.mp4" muted></video>
+		        <video src="pls3.mp4" muted></video>
+		      </div>
+		      <p>Видео</p>
+		    </div>
 
-  			
-  		</section>
+		    <div class="preview-section" onclick="openGallery('edited-photos')">
+		      <div class="preview-scroll">
+		        <img src="sltrix00.jpg" alt="Photo 1">
+		        <img src="photo2.jpg" alt="Photo 2">
+		        <img src="photo3.jpg" alt="Photo 3">
+		      </div>
+		      <p>Фото</p>
+		    </div>
+		  </div>
+
+		  <h2>Оригинальные материалы</h2>
+
+		  <div class="media-preview">
+		    <div class="preview-section" onclick="openGallery('original-videos')">
+		      <div class="preview-scroll">
+		        <video src="original1.mp4" muted></video>
+		        <video src="original2.mp4" muted></video>
+		        <video src="original3.mp4" muted></video>
+		      </div>
+		      <p>Видео</p>
+		    </div>
+
+		    <div class="preview-section" onclick="openGallery('original-photos')">
+		      <div class="preview-scroll">
+		        <img src="original_photo1.jpg" alt="Photo 1">
+		        <img src="original_photo2.jpg" alt="Photo 2">
+		        <img src="original_photo3.jpg" alt="Photo 3">
+		      </div>
+		      <p>Фото</p>
+		    </div>
+		  </div>
+
+		  <!-- Галереи -->
+		  <div id="edited-videos" class="gallery hidden"></div>
+		  <div id="edited-photos" class="gallery hidden"></div>
+		  <div id="original-videos" class="gallery hidden"></div>
+		  <div id="original-photos" class="gallery hidden"></div>
+
+		</section>
+
 
 	</main>
 
