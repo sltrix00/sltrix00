@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Media</title>
+
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="style2.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header>
+    	<div class="site-name" id="siteName">sltrix--</div>
+    	<div class="clock" id="clock">00:00:00</div>
+    	<div class="header-icons">
+		  <a href="https://open.spotify.com/user/31vh5rlxstdyyglhqrr2epfwc46i?si=f91435e9864847f7" target="_blank"><img src="spotify.png" alt="Spotify"></a>
+		  <a href="https://www.tiktok.com/@mamanekity?is_from_webapp=1&sender_device=pc" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
+		  <a href="https://www.imdb.com/user/ur161986045/?ref_=nv_usr_prof_2" target="_blank">
+		    <img src="imdb.png" alt="IMDb">
+		  </a>
+		  <a href="https://www.instagram.com/sltrix00/" target="_blank">
+		    <img src="insta.png" alt="Instagram">
+		  </a>
+		</div>
+	</header>
+
+	<main>
+
+		
+	</main>
+
+
+
+	<script>
+    	const siteNameElement = document.getElementById("siteName");
+
+    	// Возможные состояния хвоста
+    	const states = ["--", "-0", "00", "0-", "--"];
+    	let stateIndex = 0;
+
+    	function updateSiteName() {
+     	 const newTail = states[stateIndex];
+     	 siteNameElement.textContent = "sltrix" + newTail;
+
+     	 stateIndex = (stateIndex + 1) % states.length;
+   		 }
+
+    	// Первое обновление сразу
+    	updateSiteName();
+
+    	// Обновление каждую минуту (60 000 мс)
+    	setInterval(updateSiteName, 30000);
+
+    	//clocks
+    	const clockElement = document.getElementById("clock");
+
+      	function updateClock() {
+      	  const now = new Date();
+      	  const hours = String(now.getHours()).padStart(2, '0');
+      	  const minutes = String(now.getMinutes()).padStart(2, '0');
+      	  const seconds = String(now.getSeconds()).padStart(2, '0');
+      	  clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+      }
+
+      updateClock();
+      setInterval(updateClock, 1000);
+  </script>
+
+</body>
+</html>
