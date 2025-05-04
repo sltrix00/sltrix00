@@ -92,6 +92,34 @@ main {
   color: white;
 }
 
+.media {
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.pfps {
+  width: 95%;
+  border-radius: 1%;
+
+  padding: 5%;
+
+  text-align: center;
+
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.pfps h1 {
+  margin-block-start: 0px;
+}
 
 
+.pfps img {
+  border-radius: 1%;
+
+  width: 30%;
+}
 
