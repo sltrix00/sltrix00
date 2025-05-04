@@ -58,6 +58,17 @@
 			</div>
 		</section>
 
+		<section class="media2">
+			<div class="photo-slider">
+			  <img id="slider-image" src="upic7.JPG" alt="Фото" class="slider-photo">
+			  <div class="slider-controls">
+			    <button id="prev-btn">&#8592;</button>
+			    <span id="slider-counter">1 / 8</span>
+			    <button id="next-btn">&#8594;</button>
+			  </div>
+			</div>
+		</section>
+
 	</main>
 
 
@@ -96,6 +107,38 @@
       updateClock();
       setInterval(updateClock, 1000);
   </script>
+
+  <script>
+  const images = [
+    "upic7.JPG", "upic2.JPG", "upic3.JPG", "upic4.JPG",
+    "upic5.JPG", "upic6.JPG", "upic8.JPG", "upic1.JPG"
+  ];
+
+  let currentIndex = 0;
+
+  const sliderImage = document.getElementById('slider-image');
+  const sliderCounter = document.getElementById('slider-counter');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+
+  function updateSlider() {
+    sliderImage.src = images[currentIndex];
+    sliderCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateSlider();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateSlider();
+  });
+
+  updateSlider();
+</script>
+
 
 </body>
 </html>
