@@ -265,7 +265,7 @@ main {
 
 .video-display video {
   width: 100%;
-  border-radius: 12px;
+  border-radius: px;
 }
 
 /* Адаптация под экраны до 600px */
