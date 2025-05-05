@@ -58,7 +58,7 @@
 			</div>
 		</section>
 
-		<section class="media2">
+		<section class="media2" style="margin-bottom: 5%;">
 			<div class="photo-slider">
 			  <img id="slider-image" src="upic7.JPG" alt="Фото" class="slider-photo">
 			  <div class="slider-controls">
@@ -68,6 +68,35 @@
 			  </div>
 			</div>
 		</section>
+
+		<section class="media3">
+			<div class="photo-slider-2">
+				<h1 style="margin-top: 0px;">Edited</h1>
+			  <img id="slider-image-2" src="epic1.JPEG" alt="Фото" class="slider-photo-2">
+			  <div class="slider-controls-2">
+			    <button id="prev-btn-2">&#8592;</button>
+			    <span id="slider-counter-2">1 / 8</span>
+			    <button id="next-btn-2">&#8594;</button>
+			  </div>
+			</div>
+		</section>
+
+		<section class="video-gallery">
+		  <div class="video-list">
+		    <button data-src="evideo1.mp4">Franchise Olzhik&Shah</button>
+		    <button data-src="evideo2.mp4">brainrot Almat</button>
+		    <button data-src="evideo3.mp4">NIS 24-25</button>
+		    <button data-src="evideo4.mp4">Yhapojj00</button>
+		  </div>
+
+		  <div class="video-display">
+		    <video id="videoPlayer" controls>
+		      <source src="evideo1.mp4" type="video/mp4">
+		      Ваш браузер не поддерживает видео.
+		    </video>
+		  </div>
+		</section>
+
 
 	</main>
 
@@ -144,6 +173,51 @@
 
   updateSlider();
 </script>
+
+<script>
+  const images2 = [
+    "epic1.JPEG", "epic2.JPEG", "epic3.JPEG"
+  ];
+
+  let currentIndex2 = 0;
+
+  const sliderImage2 = document.getElementById('slider-image-2');
+  const sliderCounter2 = document.getElementById('slider-counter-2');
+  const prevBtn2 = document.getElementById('prev-btn-2');
+  const nextBtn2 = document.getElementById('next-btn-2');
+
+  function updateSlider2() {
+    sliderImage2.src = images2[currentIndex2];
+    sliderCounter2.textContent = `${currentIndex2 + 1} / ${images2.length}`;
+  }
+
+  prevBtn2.addEventListener('click', () => {
+    currentIndex2 = (currentIndex2 - 1 + images2.length) % images2.length;
+    updateSlider2();
+  });
+
+  nextBtn2.addEventListener('click', () => {
+    currentIndex2 = (currentIndex2 + 1) % images2.length;
+    updateSlider2();
+  });
+
+  updateSlider2();
+</script>
+
+<script>
+  const videoPlayer = document.getElementById('videoPlayer');
+  const buttons = document.querySelectorAll('.video-list button');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const src = button.getAttribute('data-src');
+      videoPlayer.querySelector('source').setAttribute('src', src);
+      videoPlayer.load();
+      videoPlayer.play();
+    });
+  });
+</script>
+
 
 
 </body>
