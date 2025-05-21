@@ -234,18 +234,6 @@ main {
   padding: 5%;
 }
 
-.favmed {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 5%;
-}
 
 .video-list {
   display: flex;
@@ -313,3 +301,73 @@ main {
 }
 
 
+.media5 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.media5-controls {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#media5-select {
+  background-color: #111;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+}
+
+.media5-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.media5-gallery img,
+.media5-gallery video {
+  width: 100%;
+  height: auto;
+  border-radius: px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  display: block;
+}
+
+.media5-gallery p {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Мобильная версия */
+@media (max-width: 600px) {
+  .media5 {
+    padding: 10px;
+  }
+
+  #media5-select {
+    font-size: 15px;
+    padding: 8px 12px;
+  }
+
+  .media5-gallery {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .media5-gallery img,
+  .media5-gallery video {
+    max-height: 60vh;
+    object-fit: contain;
+  }
+}

@@ -88,6 +88,11 @@
 		    <button data-src="evideo3.mp4">NIS 24-25</button>
 		    <button data-src="evideo4.mp4">Yhapojj00</button>
 		    <button data-src="evideo5.mp4">donkey.mp4</button>
+		    <button data-src="evideo6.mp4">videos</button>
+		    <button data-src="evideo7.mp4">hidden</button>
+		    <button data-src="evideo8.mp4">arsen</button>
+		    <button data-src="evideo9.mp4">10th grade prep</button>
+		    <button data-src="evideo10.mp4">Mew York</button>
 		  </div>
 
 		  <div class="video-display">
@@ -97,6 +102,22 @@
 		    </video>
 		  </div>
 		</section>
+
+		<section id="media5" class="media5">
+		  <div class="media5-controls">
+		    <select id="media5-select">
+		      <option value="none" disabled selected>Выбери категорию</option>
+		      <option value="opm">opm</option>
+		      <option value="opm pics">opm pics</option>
+		      <option value="video-raw">Обычные видео</option>
+		      <option value="quotes">quotes</option>
+		      <option value="favs">favs</option>
+		    </select>
+		  </div>
+
+		  <div id="media5-gallery" class="media5-gallery"></div>
+</section>
+
 
 
 	</main>
@@ -148,6 +169,8 @@
     "upic21.jpg","upic22.jpg","upic23.jpg","upic24.jpg",
     "upic25.jpg","upic26.jpg","upic27.jpg","upic28.jpg",
     "upic29.jpg","upic30.jpg","upic31.jpg","upic32.jpg",
+    "upic33.jpg","upic34.jpg","upic35.jpg","upic36.jpg",
+    "upic37.jpg",
   ];
 
   let currentIndex = 0;
@@ -177,7 +200,7 @@
 
 <script>
   const images2 = [
-    "epic1.JPEG", "epic2.JPEG", "epic3.JPEG","epic4.jpg"
+    "epic1.JPEG", "epic2.JPEG", "epic3.JPEG","epic4.jpg","epic5.jpg"
   ];
 
   let currentIndex2 = 0;
@@ -218,6 +241,70 @@
     });
   });
 </script>
+
+<script>
+const media5Data = {
+  'opm': [
+    { type: 'video', src: 'other/carti1.MP4', name: '' },
+    { type: 'video', src: 'other/carti2.MP4', name: '' },
+    { type: 'video', src: 'other/carti3.MP4', name: '' },
+    { type: 'video', src: 'other/carti4.MP4', name: '' },
+    { type: 'video', src: 'other/camillacabello.mp4', name: 'carti influence' },
+    { type: 'video', src: 'other/alexademie.mp4', name: '' },
+    { type: 'video', src: 'other/kenedit.mp4', name: 'ken' },
+    { type: 'video', src: 'other/loneken.mp4', name: 'lone&ken' },
+  ],
+  'opm pics': [
+    { type: 'image', src: 'other/agcpic.jpg', name: 'agc' },
+    { type: 'image', src: 'other/cartipic1.jpg', name: '' },
+  ],
+  'video-raw': [
+    { type: 'video', src: 'uvideo1.mp4', name: 'патимейкер' },
+    { type: 'video', src: 'uvideo2.mp4', name: 'фильм' },
+    { type: 'video', src: 'other/bday.mp4', name: 'bday.mp4' }
+  ],
+  'quotes': [
+    { type: 'video', src: 'other/hoping.MP4', name: 'hoping' },
+    { type: 'video', src: 'other/watchingyou.mp4', name: 'watching you' },
+    { type: 'video', src: 'other/Nietzsche.mp4', name: 'Nietzsche' },
+  ],
+  'favs': [
+    { type: 'video', src: 'other/coupleice.MP4', name: 'ice' },
+    { type: 'video', src: 'other/sw.mp4', name: 'Anakin' },
+    { type: 'video', src: 'other/usa.mp4', name: 'id leave kz' },
+    { type: 'video', src: 'other/bestie.mp4', name: 'bestie' },
+    { type: 'video', src: 'other/tt.mp4', name: '20166' },
+    { type: 'video', src: 'other/ttedit.mp4', name: '' },
+  ]
+};
+
+const select = document.getElementById('media5-select');
+const gallery = document.getElementById('media5-gallery');
+
+select.addEventListener('change', () => {
+  const selected = select.value;
+  const items = media5Data[selected];
+
+  gallery.innerHTML = '';
+
+  if (!items) return;
+
+  items.forEach(item => {
+    const wrapper = document.createElement('div');
+    if (item.type === 'video') {
+      wrapper.innerHTML = `
+        <video src="${item.src}" controls></video>
+        <p>${item.name}</p>`;
+    } else {
+      wrapper.innerHTML = `
+        <img src="${item.src}" alt="${item.name}">
+        <p>${item.name}</p>`;
+    }
+    gallery.appendChild(wrapper);
+  });
+});
+</script>
+
 
 
 </body>
