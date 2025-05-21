@@ -100,16 +100,16 @@
 
 		<section class="favmed">
 		  <div class="video-list">
-		    <button data-src="carti1.MP4">carti1</button>
-		    <button data-src="carti2.MP4">carti2</button>
-		    <button data-src="hoping.MP4">hoping</button>
-		    <button data-src="kenedit.MP4">ken</button>
-		    <button data-src="loneken.MP4">ken&lone</button>
+		    <button data-src="other\carti1.MP4">carti.1</button>
+		    <button data-src="other\carti2.MP4">carti.2</button>
+		    <button data-src="other\hoping.MP4">hoping</button>
+		    <button data-src="other\kenedit.MP4">ken</button>
+		    <button data-src="other\loneken.MP4">ken&lone</button>
 		  </div>
 
 		  <div class="video-display">
-		    <video id="videoPlayer" controls>
-		      <source src="evideo1.mp4" type="video/mp4">
+		    <video id="videoPlayer2" controls>
+		      <source src="other/carti1.MP4" type="video/mp4">
 		      Ваш браузер не поддерживает видео.
 		    </video>
 		  </div>
@@ -223,7 +223,7 @@
 </script>
 
 <script>
-  const videoPlayer = document.getElementById('videoPlayer');
+  const videoPlayer = document.getElementById('videoPlayer2');
   const buttons = document.querySelectorAll('.video-list button');
 
   buttons.forEach(button => {
